@@ -1,0 +1,66 @@
+{% extends 'forAll/base.html' %}
+
+{% block title %}
+    Задания
+{% endblock %}
+
+{% block links %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%  static 'todo/css/todo.css' %}">
+{% endblock %}
+
+{% block content %}
+        {% for task_block in tasks %}
+            <div class="block-with-task">
+                <div class="block-header">{{ task_block.subject }}</div>
+                <div class="todo">
+                    <div class="todo-container">
+                        <div class="tasks">
+                            {% if task_block.task1 != '✔' %}
+                                <div class="task">{{ task_block.task1 }}</div>
+                            {% endif %}
+                            {% if task_block.task2 != '✔' %}
+                                <div class="task">{{ task_block.task2 }}</div>
+                            {% endif %}
+                            {% if task_block.task3 != '✔' %}
+                                <div class="task">{{ task_block.task3 }}</div>
+                            {% endif %}
+                            {% if task_block.task4 != '✔' %}
+                                <div class="task">{{ task_block.task4 }}</div>
+                            {% endif %}
+                            {% if task_block.task5 != '✔' %}
+                                <div class="task">{{ task_block.task5 }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    <!--Кнопка для добавления дз-->
+    <div class="btn" onclick="open_menu()">
+        +
+    </div>
+
+    <!--Модальное окно-->
+    <div class="popup">
+        <div class="block-header">
+            <span>Добавить задание</span>
+            <div class="close-window"><span onclick="close_window()">&#10006;</span></div>
+        </div>
+        <div class="block-inputs">
+            <form action="/todo/" method="POST">
+                {% csrf_token %}
+                {{ form.subject }}
+                {{ form.task1 }}
+                {{ form.task2 }}
+                {{ form.task3 }}
+                {{ form.task4 }}
+                <button type="submit" name="create-task" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'todo/js/popup.js' %}"></script>
+{% endblock %}

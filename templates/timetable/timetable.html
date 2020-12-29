@@ -1,0 +1,33 @@
+{% extends 'forAll/base.html' %}
+
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block links %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%  static 'timetable/css/timetable.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!--<h1>Timetable</h1>-->
+    {% for item in day %}
+        <div class="timetable-container">
+            <div class="timetable-block">
+                    <div class="block-header">
+                        {{ item.day_number }} {{ item.day_of_week }}
+                    </div>
+                    <div class="subjects">
+                        <h3 class="subs">{{ item.subjects }}</h3>
+                        <div class="li">
+                            <li>{{ item.subject_1 }}</li>
+                            <li>{{ item.subject_2 }}</li>
+                            <li>{{ item.subject_3 }}</li>
+                            <li>{{ item.subject_4 }}</li>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    {% endfor %}
+    <script src="{% static 'timetable/js/tasks.js' %}"></script>
+{% endblock %}

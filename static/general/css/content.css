@@ -1,0 +1,25 @@
+body {
+  background-color: #7293B1;
+}
+
+.content {
+  width: 100%;
+  min-height: 91.8vh;
+  height: 9000px;
+  background-color: #7293B1;
+  padding: 40px 0;
+}
+.content .content-container {
+  width: 70%;
+  max-width: 1300px;
+  margin: auto;
+}
+.content .content-container h1 {
+  color: #1a1919;
+}
+@media screen and (max-width: 500px) {
+  .content .content-container {
+    width: 90%;
+    margin: auto;
+  }
+}

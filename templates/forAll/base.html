@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href='{%  static "general/css/header.css" %}'>
+    <link rel="stylesheet" type="text/css" href="{%  static 'general/css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'general/css/content.css' %}">
+    <!--<link rel="stylesheet" type="text/css" href="styles/dist/todo.css">-->
+    {% block links %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-section block">
+            <div class="header-logo">
+                <a href="/timetable">ССА-2</a>
+            </div>
+            <div class="burger-menu" onclick="actionWithMenu()">
+                &equiv;
+            </div>
+            <div id="menu" class="links">
+                <a href="/timetable" class="link">Расписание</a>
+                <a href="/todo" class="link">Задания</a>
+                <!--<a href="" class="sign-in">Войти</a>-->
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content-container">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+    </div>
+
+    <script src="{% static 'general/js/menu.js' %}"></script>
+    <script src="{% static 'general/js/btn.js' %}"></script>
+</body>
+</html>

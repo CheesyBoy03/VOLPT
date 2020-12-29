@@ -1,0 +1,199 @@
+@charset "UTF-8";
+body {
+  background-color: #7293B1;
+}
+
+.content-container {
+  width: 70%;
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  justify-items: center;
+  align-items: center;
+  /*      МОДАЛЬНОЕ ОКНО        */
+}
+@media screen and (max-width: 500px) {
+  .content-container {
+    width: 90%;
+    margin: auto;
+  }
+}
+.content-container .block-with-task {
+  border-radius: 10px;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 450px;
+}
+.content-container .block-with-task .block-header {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  border-radius: 10px 10px 0 0;
+  background-color: #0D1321;
+  color: #f4f4f4;
+  min-height: 60px;
+  font-size: 2em;
+}
+@media screen and (max-width: 500px) {
+  .content-container .block-with-task .block-header {
+    font-size: 1.6em;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .content-container .block-with-task .block-header {
+    font-size: 1.5em;
+  }
+}
+.content-container .block-with-task .todo {
+  padding: 10px 40px 20px;
+  min-height: 150px;
+  border-radius: 0 0 10px 10px;
+  background-color: #f4f4f4;
+  font-size: 20px;
+}
+@media screen and (max-width: 500px) {
+  .content-container .block-with-task .todo {
+    font-size: 1.1em;
+  }
+}
+.content-container .block-with-task .todo .todo-container .subject {
+  font-weight: 600;
+}
+.content-container .block-with-task .todo .todo-container .tasks .task {
+  font-size: 16px;
+  padding: 5px 15px;
+}
+.content-container .btn {
+  z-index: 20;
+  border-radius: 50%;
+  width: 7vh;
+  height: 7vh;
+  min-height: 60px;
+  min-width: 60px;
+  max-width: 70px;
+  max-height: 70px;
+  background-color: #0D1321;
+  position: fixed;
+  bottom: 50px;
+  right: 15%;
+  color: #f4f4f4;
+  font-size: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-container .btn:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .content-container .btn {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .content-container .btn {
+    font-size: 16;
+  }
+}
+.content-container .popup {
+  border-radius: 10px;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.4);
+  width: 80%;
+  max-width: 1000px;
+  min-height: 400px;
+  border-radius: 15px;
+  background-color: #f4f4f4;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.content-container .popup .block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0D1321;
+  border-radius: 15px 15px 0 0;
+  height: 80px;
+  font-size: 36px;
+  padding: 0 40px;
+}
+.content-container .popup .block-header span {
+  color: #f4f4f4;
+}
+.content-container .popup .block-header .close-window:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  .content-container .popup .block-header {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .content-container .popup .block-header {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .content-container .popup {
+    width: 90%;
+  }
+}
+.content-container .popup .block-inputs {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding-bottom: 40px;
+}
+.content-container .popup .block-inputs form {
+  width: 80%;
+  margin: auto;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.content-container .popup .block-inputs form input, .content-container .popup .block-inputs form button, .content-container .popup .block-inputs form div {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid;
+  margin-top: 20px;
+  padding-left: 20px;
+  outline: none;
+}
+.content-container .popup .block-inputs form .add-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+}
+.content-container .popup .block-inputs form .add-input:hover {
+  cursor: pointer;
+}
+.content-container .popup .block-inputs form .submit-btn {
+  background-color: #34AADC;
+  color: #f4f4f4;
+  border: none;
+  font-size: 18px;
+}
+.content-container .popup .block-inputs form .submit-btn:hover {
+  cursor: pointer;
+}
+.content-container .popup .block-inputs form a {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+@media screen and (max-width: 750px) {
+  .content-container .popup .block-inputs {
+    width: 90%;
+  }
+}
+.content-container .open {
+  display: block;
+}

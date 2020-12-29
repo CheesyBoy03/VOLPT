@@ -1,0 +1,109 @@
+body {
+  background-color: #7293B1;
+}
+
+header {
+  background-color: #0D1321;
+  color: #f4f4f4;
+}
+header .header-logo a {
+  padding: 10px 0;
+  color: #34AADC;
+  font-family: "Press Start 2P", cursive;
+  font-size: 2em;
+}
+header .burger-menu {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.3em;
+  border: 1px solid #34AADC;
+  color: #f4f4f4;
+}
+@media screen and (max-width: 800px) {
+  header .burger-menu {
+    display: flex;
+  }
+}
+header .header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  max-width: 1300px;
+  margin: auto;
+  height: 80px;
+}
+@media screen and (max-width: 500px) {
+  header .header-section {
+    width: 90%;
+    margin: auto;
+  }
+}
+header .header-section .links {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1024px) {
+  header .header-section .links {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 800px) {
+  header .header-section .links {
+    display: none;
+  }
+}
+header .header-section .links .link {
+  color: #f4f4f4;
+  padding: 10px 0;
+}
+header .header-section .links .link:hover {
+  padding: 10px 0 8px;
+  border-bottom: 2px solid #34AADC;
+}
+header .header-section .links .sign-in {
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #34AADC;
+  color: #f4f4f4;
+}
+header .header-section .links .sign-in:hover {
+  background-color: #2d9ccc;
+  transition: 0.3s;
+}
+@media screen and (min-width: 1440px) {
+  header .header-section .links {
+    width: 30%;
+  }
+}
+header .header-section .topnav {
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #0D1321;
+  padding: 10px 30px;
+}
+header .header-section .topnav .link:last-child {
+  border-top: 1px solid #34AADC;
+}
+header .header-section .topnav .link:hover {
+  border-bottom: none;
+}
+header .header-section .topnav .sign-in {
+  text-align: center;
+  margin: 10px 0;
+}
+@media screen and (max-width: 1000px) {
+  header .header-section {
+    width: 90%;
+    margin: auto;
+  }
+}
